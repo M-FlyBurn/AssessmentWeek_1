@@ -73,8 +73,8 @@ console.log(totalArces)
 
 // CODE HERE
 
-let averageDailyAcres = (totalArces %14) 
-console.log(averageDailyAcres)
+let averageDailyAcres = (totalArces /7) 
+console.log(`Average Daily Acres: ${averageDailyAcres}`)
 //meaningful comment i used the % operation to divide by all the sum of the elements to find average, them I console.logged it
 
 // PROBLEM 3
@@ -112,9 +112,11 @@ let days = 0
 // CODE HERE
 
 while(acresLeft > 0){
-    if(days += 1) (days - %3)
+    days++
+    acresLeft -= averageDailyAcres
 }
-console.log(days)
+
+console.log(`The number of days it takes to pick from all the arces is ${days}`)
 
 // PROBLEM 4
 
@@ -142,11 +144,18 @@ console.log(days)
 
 // CODE HERE
 
-// let fujiTons =
-// let galaTons =
-// let pinkTons =
+let fujiTons = fujiAcres.slice()
+let galaTons = galaAcres.slice()
+let pinkTons = pinkAcres.slice()
 
-
+for (let i = 0; i < 7; i++){
+    fujiTons[i] *= 6.5
+    galaTons[i] *= 6.5
+    pinkTons[i] *= 6.5
+}
+console.log(`The amount of tons of apples colleted each day for fuji is ${fujiTons}`)
+console.log(`The amount of tons of apples colleted each day for gala is ${galaTons}`)
+console.log(`The amount of tons of apples colleted each day for pink is ${pinkTons}`)
 
 
 
@@ -169,12 +178,22 @@ console.log(days)
 
 // CODE HERE 
 
-// let fujiPounds =
-// let galaPounds =
-// let pinkPounds =
+let fujiPounds = 0
+let galaPounds = 0
+let pinkPounds = 0
 
+for (let i= 0; i < 7; i++){
+    fujiPounds += fujiTons[i]
+    galaPounds += galaTons[i]
+    pinkPounds += pinkTons[i]
+}
+fujiPounds *= 2000
+galaPounds *= 2000
+pinkPounds *= 2000
 
-
+console.log(`The total pounds picked at the fuji orchard is ${fujiPounds}lbs.`)
+console.log(`The total pounds picked at the gala orchard is ${galaPounds}lbs.`)
+console.log(`The total pounds picked at the pink orchard is ${pinkPounds}lbs.`)
 
 
 
@@ -196,13 +215,13 @@ console.log(days)
 
 // CODE HERE
 
-// let fujiProfit =
-// let galaProfit =
-// let pinkProfit =
+let fujiProfit = fujiPounds * fujiPrice
+let galaProfit = galaPounds * galaPrice
+let pinkProfit = pinkPounds * pinkPrice
 
-
-
-
+console.log(`The total revune for the fuji orchard is $${fujiProfit}.`)
+console.log(`The total revune for the gala orchard is $${galaProfit}.`)
+console.log(`The total revune for the pink orchard is $${pinkProfit}.`)
 
 
 // PROBLEM 7
@@ -216,3 +235,7 @@ console.log(days)
 */
 
 // CODE HERE
+
+let totalProfit = fujiProfit + galaProfit + pinkProfit
+
+console.log(`The total revenue of all 3 orchards after 1 week of apple picking is $${totalProfit}`)
